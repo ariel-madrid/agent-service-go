@@ -1,29 +1,28 @@
 # Stage 1 -> Installer && go build
-FROM golang:1.24.3 as builder
+FROM golang:1.24.3-alpine as builder
 
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends build-essential git && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk update && apk add alpine-sdk git && rm -rf /var/cache/apk/*
 
+RUN mkdir -p /app
 WORKDIR /app
 
-COPY go.mod ./
-COPY go.sum ./
+COPY go.mod .
+COPY go.sum .
 RUN go mod download
 
 COPY . .
-
-RUN go build -o app .
+RUN go build -o ./app ./main.go
 
 # Stage 2 -> Run
 FROM alpine:latest
 
 RUN apk update && rm -rf /var/cache/apk/*
 
+RUN mkdir -p /app
 WORKDIR /app
 
 COPY --from=builder /app/app .
 
 EXPOSE 8100
 
-ENTRYPOINT ["./app"]
+ENTRYPOINT [ "./app" ]
