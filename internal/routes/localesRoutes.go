@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"repo/controller"
-	"repo/middleware"
+	"github.com/ariel-madrid/agent-service-go/controller"
+	"github.com/ariel-madrid/agent-service-go/middleware"
 	"github.com/gin-gonic/gin"
 )
 
