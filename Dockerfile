@@ -1,5 +1,5 @@
 # Stage 1 -> Installer && go build
-FROM golang:1.24.3-alpine as builder
+FROM golang:1.24.3 as builder
 
 RUN apk update && apk add alpine-sdk git && rm -rf /var/cache/apk/*
 
