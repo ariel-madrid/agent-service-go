@@ -11,7 +11,7 @@ COPY go.sum .
 RUN go mod download
 
 COPY . .
-RUN go build -o ./app ./cmd/server/main.go
+RUN go build -o ./main.go
 
 # Stage 2 -> Run
 FROM alpine:latest
