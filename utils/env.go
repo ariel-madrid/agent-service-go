@@ -9,7 +9,7 @@ import (
 )
 
 func checkVars() []string {
-	vars := []string{"GO_REST_ENV", "DB_USER", "DB_PASS", "DB_DB", "DB_HOST", "DB_INSTANCE", "DB_PORT", "ADDR", "JWT_KEY", "ROL_SERVICE"}
+	vars := []string{"GO_REST_ENV", "DB_USER", "DB_PASS", "DB_DB", "DB_HOST", "DB_INSTANCE", "DB_PORT", "ADDR", "JWT_KEY"}
 	missing := []string{}
 	for _, v := range vars {
 		_, set := os.LookupEnv(v)
