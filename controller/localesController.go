@@ -10,7 +10,7 @@ func GetLocales(c *gin.Context) {
 
 	locales := services.GetDatosLocales()
 	if locales == nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "No data"})
 		return
 	}
 	c.JSON(http.StatusOK, locales)
