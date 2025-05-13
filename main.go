@@ -2,7 +2,7 @@ package main
 
 import (
 	"log"
-	"github.com/ariel-madrid/agent-service-go/internal/controller"
+	"github.com/ariel-madrid/agent-service-go/controller"
 
 	"github.com/gin-gonic/gin"
 )
