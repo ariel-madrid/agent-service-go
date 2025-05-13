@@ -8,8 +8,8 @@ import (
 
 func GetLocales(c *gin.Context) {
 
-	locales, err := services.GetDatosLocales()
-	if err != nil {
+	locales := services.GetDatosLocales()
+	if locales == nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
