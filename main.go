@@ -1,6 +1,11 @@
 package main
 
 import (
+	"os"
+	"io"
+	"net/http"
+	"github.com/ariel-madrid/agent-service-go/utils"
+	"github.com/ariel-madrid/agent-service-go/internal/routes"
 	"log"
 	"github.com/ariel-madrid/agent-service-go/controller"
 	"github.com/ariel-madrid/agent-service-go/middleware"
