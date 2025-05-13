@@ -1,9 +1,9 @@
 package services
 
 import (
-	"log"
+	//"log"
 
-	"github.com/ariel-madrid/agent-service-go/model"
+	//"github.com/ariel-madrid/agent-service-go/model"
 	"gorm.io/gorm"
 )
 
