@@ -1,7 +1,7 @@
 version: '3.2'
 
 services:
-  api-certificados:
+  agent-market-go:
     container_name: agent-market-go
     build:
       context: .
